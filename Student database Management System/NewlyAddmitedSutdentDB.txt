@@ -1,0 +1,114 @@
+                STUDENT DB MANAGEMENT SYS
+
+
+What it does ?
+
+-> It collects the data of newly addmited student. And
+   its the starting phase in office automation sysytem.
+
+Pre-requisites :
+
+student name
+student address
+students educational qualification
+student application no
+student enrollmemt no(After generation)
+students submitted files
+Students payement details
+students receipt number
+
+
+blank code:
+
+* {
+  font-family: sans-serif;
+  margin: 2%;
+  padding: 10px;
+  background: #e9d0f1;
+  border-radius: 4px;
+}
+
+h1 {
+  display: inline-flex;
+  position: absolute;
+  top: 0%;
+}
+
+h2 {
+  display: inline-flex;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+}
+
+label {
+  position: relative;
+  display: flex;
+  top: 150px;
+  left: 120px;
+  font-weight: 600;
+}
+
+input {
+  position: relative;
+  display: flex;
+  top: 150px;
+  left: 110px;
+  height: 28px;
+  width: 270px;
+  font-weight: 600;
+  background: #d9d9d9;
+  border: 1px solid #b319fc;
+  border-radius: 10px;
+  background-color: white;
+}
+
+#login{
+    position: relative;
+    display: flex;
+    width: 140px;
+    height: 40px;
+    top: 190px;
+    padding: 5px;
+    justify-content: center;
+    color: white;
+    background-color: #69326D;
+    cursor: pointer;
+}
+
+#register{
+
+        position: relative;
+        display: flex;
+        top: 141px;
+        left: 255px;
+        width: 140px;
+        height: 40px;
+        padding: 5px;
+        font-weight: 600;
+        justify-content: center;
+        background-color: white;
+        cursor: pointer;
+}
+
+#forget_password{
+    position: relative;
+    top: 160px;
+    left: 95px;
+    text-decoration: none;
+}
+#login:hover{
+    background-color: white;
+    color: black;
+    transition: 0.32s ease-in-out;
+}
+#register:hover{
+    background-color: #69326D;
+    color: white;
+    transition: 0.32s ease-in-out;
+}
+
+#forget_password:hover{
+    color: red;
+    transition: 0.2s;
+}

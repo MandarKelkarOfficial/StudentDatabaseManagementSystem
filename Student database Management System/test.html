@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="test.css" />
+   
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <!----===== Boxicons CSS ===== -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>STUDENT DATABASE MANAGEMENT SYSTEM</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">SDMS</div>
+      <input type="checkbox" id="click" />
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </nav>
+    <div class="content_nav"></div>
+
+    <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+    <section class="content_position_display">
+      <div class="sidebar">
+        <div class="logo-details">
+          <i class="bx bxl-c-plus-plus icon"></i>
+          <div class="logo_name">SDMS</div>
+          <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <i class="bx bx-search"></i>
+            <input type="text" placeholder="Search..." />
+            <span class="tooltip">Search</span>
+          </li>
+          <li>
+            <a href="#" id="dashboard" onclick="openStudentdata(1)">
+              <i class="bx bx-grid-alt"></i>
+              <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+          </li>
+          <li>
+            <a href="#" id="studentdata" onclick="openStudentdata(2)">
+              <i class="bx bx-user"></i>
+              <span class="links_name">Student Data Input</span>
+            </a>
+            <span class="tooltip">Student data</span>
+          </li>
+          <!-- <li>
+              <a href="#">
+                <i class="bx bx-chat"></i>
+                <span class="links_name">Messages</span>
+              </a>
+              <span class="tooltip">Messages</span>
+            </li> -->
+          <li>
+            <a href="#" onclick="openStudentdata(3)" id="studentAnalytics">
+              <i class="bx bx-pie-chart-alt-2"></i>
+              <span class="links_name">Student Analytics</span>
+            </a>
+            <span class="tooltip">Analytics</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bx bx-folder"></i>
+              <span class="links_name">Student File Manager</span>
+            </a>
+            <span class="tooltip">Files</span>
+          </li>
+          <!-- <li>
+              <a href="#">
+                <i class="bx bx-cart-alt"></i>
+                <span class="links_name">Order</span>
+              </a>
+              <span class="tooltip">Order</span>
+            </li> -->
+          <li>
+            <a href="#">
+              <i class="bx bx-heart"></i>
+              <span class="links_name">Saved Data</span>
+            </a>
+            <span class="tooltip">Saved Data</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bx bx-cog"></i>
+              <span class="links_name">Setting</span>
+            </a>
+            <span class="tooltip">Setting</span>
+          </li>
+          <li class="profile">
+            <div class="profile-details">
+              <!--<img src="profile.jpg" alt="profileImg">-->
+              <div class="name_job">
+                <div class="name">Mandar Kelkar</div>
+                <div class="job">Web designer</div>
+              </div>
+            </div>
+            <a href="SDMS_GUI.html"
+              ><i class="bx bx-log-out" id="log_out"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="student_info_collection">
+      <div class="container" id="container_diaplay_property">
+        <div class="title">Student Data</div>
+        <div class="content">
+          <form action="SDMS_main.py" method="post">
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Name Of Student</span>
+                <input
+                  type="text"
+                  placeholder="Last name    First name    Middle name"
+                  required
+                  name="name"
+                />
+              </div>
+              <div class="input-box">
+                <span class="details">Address</span>
+                <input
+                  type="text"
+                  placeholder="Enter students address"
+                  required name="address"
+                />
+              </div>
+              <div class="input-box">
+                <span class="details">Email</span>
+                <input type="text" placeholder="user@gmail.com" required  name="email"/>
+              </div>
+              <div class="input-box">
+                <span class="details">Phone Number</span>
+                <input type="text" placeholder="+91  0000000000" required name="phoneno" />
+              </div>
+              <div class="input-box">
+                <span class="details">Enrollment( If available )</span>
+                <input type="text"  placeholder="E.g 2001170XXX" required  name="enrollno"/>
+              </div>
+              <div class="input-box">
+                <span class="details">Educational Qualifications</span>
+                <!-- <input type="select" placeholder="Confirm your password" required /> -->
+                <select name="EQ" id="educational_qualification">
+                  <option  selected hidden value="">Select the educational qualification</option>
+                  <option value="ssc">SSC</option>
+                  <option value="hsc">HSC</option>
+                </select>
+              </div>
+            </div>
+            <div class="gender-details">
+              <input type="radio" name="gender" id="dot-1" />
+              <input type="radio" name="gender" id="dot-2" />
+              <!--   radio buttons -->
+              <input type="radio" name="gender" id="dot-3" />
+              <span class="gender-title">Gender</span>
+              <div class="category">
+                <label for="dot-1">
+                  <span class="dot one"></span>
+                  <span class="gender">Male</span>
+                </label>
+                <label for="dot-2">
+                  <span class="dot two"></span>
+                  <span class="gender">Female</span>
+                </label>
+                <label for="dot-3">
+                  <span class="dot three"></span>
+                  <span class="gender">Prefer not to say</span>
+                </label>
+              </div>
+            </div>
+            <div class="button">
+              <input type="submit" value="Submit" onclick="register()" />
+              <input type="reset" value="Clear" id="clrbtn" onclick="clear()" />
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="dashboard_view" id="dashboard_flex">
+        <h1 id="welcome">Welcome to STUDENT DATABASE MANAGEMENT SYSTEM</h1>
+      </div>
+
+      <div class="student_table" id="student_tables">
+        <h2 id="sth">Student Data Table</h2>
+
+        <div style="overflow-x: auto">
+          <table>
+            <tr>
+              <th>Name Of Student</th>
+              <th>Address</th>
+              <th>Email</th>
+              <th>Phone No</th>
+              <th>Enrollment No</th>
+              <th>Educational Qualification</th>
+              <th>Gender</th>
+            </tr>
+            <tr>
+              <td>Mandar Kelkar</td>
+              <td>Rajshilp Dhuriwada Malvan</td>
+              <td>mandarkelkar0@gmail.com</td>
+              <td>9405926301</td>
+              <td>2001170308</td>
+              <td>SSC</td>
+              <td>Male</td>
+            </tr>
+            <tr>
+              <td>Uchiha Itachi</td>
+              <td>From village hidden in the Leaf</td>
+              <td>uchihaslayer@gmail.com</td>
+              <td>9405926311</td>
+              <td>2001170311</td>
+              <td>Anbu</td>
+              <td>Male</td>
+            </tr>
+            <tr>
+              <td>Nico Robin</td>
+              <td>From Ohara</td>
+              <td>devilchild@gmail.com</td>
+              <td>940592611</td>
+              <td>2001170351</td>
+              <td>Archaeologist</td>
+              <td>Female</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- </section> -->
+
+    <!-- <script>
+      function openStudentdata(value) {
+        if (value == 1) {
+          document.getElementById("dashboard_flex").style.display = "block";
+          document.getElementById("container_diaplay_property").style.display =
+            "none";
+          document.getElementById("student_tables").style.display = "none";
+        } else if (value == 2) {
+          document.getElementById("container_diaplay_property").style.display =
+            "block";
+          document.getElementById("dashboard_flex").style.display = "none";
+          document.getElementById("student_tables").style.display = "none";
+        } else if (value == 3) {
+          document.getElementById("student_tables").style.display = "flex";
+          document.getElementById("container_diaplay_property").style.display =
+            "none";
+          document.getElementById("dashboard_flex").style.display = "none";
+        }
+      }
+*/
+
+
+
+    /*  
+      let sidebar = document.querySelector(".sidebar");
+      let closeBtn = document.querySelector("#btn");
+      let searchBtn = document.querySelector(".bx-search");
+
+      closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange(); //calling the function(optional)
+      });
+
+      searchBtn.addEventListener("click", () => {
+        // Sidebar open when you click on the search iocn
+        sidebar.classList.toggle("open");
+        menuBtnChange(); //calling the function(optional)
+      });
+
+      // following are the code to change sidebar button(optional)
+      function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+          closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
+        } else {
+          closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
+        }
+      }
+    </script>*/ -->
+
+    <script src="test.js"></script>
+  </body>
+</html>
